@@ -1,23 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CreateRootNavigator from "../routes";
 import { connect } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen'
+import { isLoginSelector } from '../modules/selectors';
 
-const AppContainer = props => {
-
-  const [signedIn, setSignedIn] = useState(true)
+const AppContainer = ({ isLogin }) => {
+  const [signedIn, setSignedIn] = useState(false)
   const [isOnboarding, setIsOnboarding] = useState(true)
 
+  useEffect(() => {
+    SplashScreen.hide()
+  }, [])
 
-  if (props.isLogin) {
-    return (<CreateRootNavigator signedIn={props.isLogin} isOnboarding={isOnboarding} />);
-  }
-  if (signedIn == null || isOnboarding == null ) {
-    return (null)
-  }
-  else {
+  if (isLogin) {
     return (
-      <CreateRootNavigator signedIn={signedIn} isOnboarding={isOnboarding} />);
+      <CreateRootNavigator signedIn={isLogin} isOnboarding={isOnboarding} />
+    );
+  }
+  if (signedIn == null || isOnboarding == null) {
+    return (null)
+  } else {
+    return (
+      <CreateRootNavigator signedIn={signedIn} isOnboarding={isOnboarding} />
+    );
   }
 }
 
-export default AppContainer;
+function mapStateToProps(state) {
+  return {
+    isLogin: isLoginSelector(state)
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
