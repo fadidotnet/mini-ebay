@@ -1,10 +1,15 @@
 # Mini e-Bay
 
 ## To run the project following are the quick steps:
+
 • Clone the project from Github
+
 • cd <root folder of the project>
+
 • run `npm install`
+
 • For iOS
+
  - `cd ios`
  - `pod install`
  - Open `mini_ebay.xcworkspace` in XCode
@@ -33,6 +38,7 @@ from
     }
 }
 ```
+
 • After that go to root folder of your project and open cmd and run :
   - `npm start`
 • Open another terminal and run:
