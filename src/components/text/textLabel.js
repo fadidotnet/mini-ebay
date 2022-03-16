@@ -9,7 +9,7 @@ const TextLabel = props => {
         <Text style={[styles.textLeftStyle, props.textStyle]}>
           {props.titleLeft}
         </Text>
-        <TouchableOpacity onPress={props.onPress} >
+        <TouchableOpacity testID={props.testId} onPress={props.onPress} >
           <Text style={[styles.textRightStyle, props.textStyle]}>
             {props.titleRight}
           </Text>

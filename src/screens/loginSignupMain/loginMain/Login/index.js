@@ -46,9 +46,14 @@ const Login = ({ navigation, module }) => {
 		<SafeAreaView style={styles.container}>
 			<KeyboardAvoidingView style={styles.keyboardAvoidingView}>
 				<ScrollView>
-					<Header titleLeft={strings.sign_in} />
+					<Header
+						testId="Login_SignInText"
+						titleLeft={strings.sign_in} />
 					<View style={styles.sectionContainer}>
 						<TextField
+						    testIdError="Login_EmailError"
+							testIdTextInput="Login_EmailTextInput" 
+							testIdIcon="Login_EmailIcon" 
 							title={strings.email}
 							value={email}
 							onChangeText={(text) => setEmail(text)}
@@ -57,6 +62,9 @@ const Login = ({ navigation, module }) => {
 							keyBoardType={'email-address'}
 						/>
 						<TextField
+							testIdError="Login_PasswordError"
+							testIdTextInput="Login_PasswordTextInput"
+							testIdIcon="Login_PasswordIcon"
 							title={strings.password}
 							password
 							value={password}
@@ -66,12 +74,14 @@ const Login = ({ navigation, module }) => {
 						/>
 					</View>
 					<PrimaryButton
+					testId='Login_SignInButton'
 						title={strings.sign_in}
 						onPress={() => signIn()} 
 						buttonContainerStyle={{marginTop: hp('5.5%')}}
 						loading={loading}
 						/>
 					<TextLabel
+					testId="Login_RegisterText"
 						titleLeft={strings.new_here}
 						titleRight={strings.register}
 						onPress={() => navigation.navigate('SignUp')}

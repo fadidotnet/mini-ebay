@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, TextInput, Image, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
-const TextField = ({ title, password = false, value, onChangeText, icon, errorText, shouldShowError = false, onPress, keyBoardType = 'default', maxLength, enabled = true }) => {
+const TextField = ({ title, password = false, value, onChangeText, icon, errorText, shouldShowError = false, onPress, keyBoardType = 'default', maxLength, enabled = true, testIdTextInput, testIdError, testIdIcon }) => {
   return (
     <View style={styles.container}>
       <View style={styles.sectionStyle}>
         <TextInput
+          testID={testIdTextInput}
           style={styles.textInputStyle}
           placeholder={title}
           underlineColorAndroid="transparent"
@@ -20,6 +21,7 @@ const TextField = ({ title, password = false, value, onChangeText, icon, errorTe
         {icon ?
           <TouchableOpacity onPress={enabled ? onPress: null} >
             <Image
+              testID={testIdIcon}
               source={icon}
               style={styles.imageStyle}
             />
@@ -30,7 +32,7 @@ const TextField = ({ title, password = false, value, onChangeText, icon, errorTe
       </View>
       {
         errorText || shouldShowError ?
-          <Text style={shouldShowError ? styles.textErrorStyle : styles.textUnderlineStyle}>
+          <Text testID={testIdError}  style={shouldShowError ? styles.textErrorStyle : styles.textUnderlineStyle}>
             {errorText}
           </Text>
           : null

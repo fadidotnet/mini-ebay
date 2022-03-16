@@ -50,16 +50,35 @@ const SignUp = ({ navigation, module }) => {
 		<SafeAreaView style={styles.container}>
 			<KeyboardAvoidingView style={styles.keyboardAvoidingView}>
 				<ScrollView >
-					<Header titleLeft={strings.register} />
+					<Header
+						testId="Register_SignUpText"
+						titleLeft={strings.register}
+					/>
 					<View style={styles.sectionContainer}>
-						<TextField title={strings.name}
+						<TextField
+							testIdTextInput="Signup_NameTextInput"
+							testIdIcon="Signup_NameIcon"
+							title={strings.name}
 							value={name}
 							onChangeText={text => setName(text)}
 							errorText={errors?.name}
 							shouldShowError={errors && errors.name}
 						/>
 
-						<TextField title={strings.email}
+						<TextField
+							testIdTextInput="Signup_EmailTextInput"
+							testIdIcon="Signup_EmailIcon"
+							title={strings.email}
+							value={email}
+							onChangeText={text => setEmail(text)}
+							errorText={errors?.email}
+							shouldShowError={errors && errors.email}
+							keyBoardType={'email-address'} />
+
+						<TextField
+							testIdTextInput="Signup_PasswordTextInput"
+							testIdIcon="Signup_PasswordIcon"
+							title={strings.email}
 							value={email}
 							onChangeText={text => setEmail(text)}
 							errorText={errors?.email}
@@ -68,6 +87,8 @@ const SignUp = ({ navigation, module }) => {
 						/>
 
 						<TextField
+							testIdTextInput="Signup_PasswordTextInput"
+							testIdIcon="Signup_PasswordIcon"
 							title={strings.password}
 							password={true}
 							value={password}
@@ -78,6 +99,7 @@ const SignUp = ({ navigation, module }) => {
 
 					</View>
 					<PrimaryButton
+						testId='Signup_Button'
 						title={strings.register}
 						onPress={() => register()}
 						buttonContainerStyle={{ marginTop: hp('5.5%') }}
@@ -85,6 +107,7 @@ const SignUp = ({ navigation, module }) => {
 					/>
 
 					<TextLabel
+						testId="Signup_AlreadyText"
 						titleLeft={strings.already_have_an_account}
 						titleRight={strings.sign_in}
 						onPress={() => navigation.navigate('Login')}

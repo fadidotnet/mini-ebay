@@ -7,7 +7,7 @@ const Header = props => {
   return (
     <View style={styles.container}>
       <View style={styles.sectionStyle}>
-        <Text style={styles.textLeftStyle }>
+        <Text testID={props.testId} style={styles.textLeftStyle }>
           {props.titleLeft}
         </Text>
         <TouchableOpacity onPress={props.onPress}>
