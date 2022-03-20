@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TextInput, Image, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
+
 const TextField = ({ title, password = false, value, onChangeText, icon, errorText, shouldShowError = false, onPress, keyBoardType = 'default', maxLength, enabled = true }) => {
   return (
     <View style={styles.container}>
