@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import styles from './styles';
-const PrimaryButton = ({ onPress, title, loading, buttonContainerStyle }) => {
+const PrimaryButton = ({ onPress, title, loading, buttonContainerStyle,testId }) => {
   return (
-    <TouchableOpacity onPress={onPress} >
+    <TouchableOpacity testID={testId} onPress={onPress} >
       <View style={styles.container}>
         <View style={[styles.buttonContainer, buttonContainerStyle]}>
           {loading == true ?

@@ -1,5 +1,5 @@
 
-package com.miniebay;
+package com.mini_ebay;
 
 import com.wix.detox.Detox;
 
@@ -23,3 +23,4 @@ public class DetoxTest {
         Detox.runTests(mActivityRule);
     }
 }
+

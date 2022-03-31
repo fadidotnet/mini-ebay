@@ -64,7 +64,6 @@ const SignUp = ({ navigation, module }) => {
 							errorText={errors?.name}
 							shouldShowError={errors && errors.name}
 						/>
-
 						<TextField
 							testIdTextInput="Signup_EmailTextInput"
 							testIdIcon="Signup_EmailIcon"
@@ -74,18 +73,6 @@ const SignUp = ({ navigation, module }) => {
 							errorText={errors?.email}
 							shouldShowError={errors && errors.email}
 							keyBoardType={'email-address'} />
-
-						<TextField
-							testIdTextInput="Signup_PasswordTextInput"
-							testIdIcon="Signup_PasswordIcon"
-							title={strings.email}
-							value={email}
-							onChangeText={text => setEmail(text)}
-							errorText={errors?.email}
-							shouldShowError={errors && errors.email}
-							keyBoardType={'email-address'}
-						/>
-
 						<TextField
 							testIdTextInput="Signup_PasswordTextInput"
 							testIdIcon="Signup_PasswordIcon"

@@ -10,8 +10,6 @@ export const signInScreenTests = () => {
 
     checkVisibility('Email Text Input Visible', 'Login_EmailTextInput')
 
-    checkVisibility('Icon on Email Text Input Visible', 'Login_EmailIcon')
-
     it('Type Wrong Email', async () => {
         await element(by.id('Login_EmailTextInput')).tap();
         await element(by.id('Login_EmailTextInput')).replaceText("fahad123");
@@ -24,8 +22,6 @@ export const signInScreenTests = () => {
     checkVisibility('Invalid Email Error Visible', 'Login_EmailError')
 
     checkVisibility('Password Text Input Visible', 'Login_PasswordTextInput')
-
-    checkVisibility('Icon on Password Text Input Visible', 'Login_PasswordIcon')
 
     it('Type Wrong Password', async () => {
         await element(by.id('Login_PasswordTextInput')).tap();
