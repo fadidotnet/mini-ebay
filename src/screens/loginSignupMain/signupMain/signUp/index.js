@@ -27,7 +27,7 @@ const SignUp = ({ navigation, module }) => {
 	const dispatch = useDispatch();
 
 	useEffect( () => {
-		setLoading(false)
+		setLoading(module?.loading)
 	}, [module?.loading])
 
 	const register = () => {

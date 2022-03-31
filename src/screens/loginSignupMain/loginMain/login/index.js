@@ -24,7 +24,7 @@ const Login = ({ navigation, module }) => {
 	const dispatch = useDispatch();
 
 	useEffect( () => {
-		setLoading(false)
+		setLoading(module?.loading)
 	}, [module?.loading])
 
 	const signIn = () => {
